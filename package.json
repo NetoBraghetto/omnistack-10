@@ -1,0 +1,26 @@
+{
+  "name": "omnistack",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./node_modules/nodemon/bin/nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NetoBraghetto/omnistack-10.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "bugs": {
+    "url": "https://github.com/NetoBraghetto/omnistack-10/issues"
+  },
+  "homepage": "https://github.com/NetoBraghetto/omnistack-10#readme"
+}
