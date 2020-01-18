@@ -1,0 +1,13 @@
+@import './partials/vars';
+@import './partials/common';
+
+@import './pages/app';
+
+@media (max-width: 1000px) {
+    @import './partials/md/common';
+    @import './partials/md/app';
+}
+
+@media (max-width: 650px) {
+    @import './partials/xs/common';
+}
