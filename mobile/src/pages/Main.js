@@ -4,6 +4,7 @@ import { StyleSheet, Image, View, Text, TextInput, TouchableOpacity } from "reac
 import { requestPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
 import { MaterialIcons } from "@expo/vector-icons";
 import api from "../services/api";
+import { connect as socketConnect, disconect as socketDisconnect } from '../services/socket';
 
 
 export default function Main(props) {
@@ -37,12 +38,18 @@ export default function Main(props) {
         setCurrentRegion(region);
     }
 
+    function setupWebSocket() {
+        const { latitude, longitude } = currentRegion;
+        socketConnect(latitude, longitude, skillsText);
+    }
+
     async function fetchDevs() {
         const { latitude, longitude } = currentRegion;
         const response = await api.get('/devs', {
             params: {latitude, longitude, skills: skillsText}
         });
         setDevs(response.data);
+        setupWebSocket();
     }
 
     return (
